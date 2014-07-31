@@ -1,8 +1,0 @@
-# Include your customized HAL commands here
-# This file will not be overwritten when you run stepconf again
-
-loadusr -W hal_input -KRAL 
-#loadusr -W hal_input -KRAL X-Box
-#loadusr -W hal_input -KRAL Logitech
-
-
