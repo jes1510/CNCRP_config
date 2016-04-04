@@ -32,7 +32,10 @@ setp pwmgen.0.offset 0.114285714286
 setp pwmgen.0.dither-pwm true
 net spindle-cw <= motion.spindle-forward
 
+
+
 #net all-limit <= parport.0.pin-12-in
+net probe parport.0.pin-12-in-not => motion.probe-input
 
 net estop-out => parport.0.pin-01-out
 net xstep => parport.0.pin-02-out

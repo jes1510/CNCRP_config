@@ -28,11 +28,9 @@ net remote-speed-fast or2.0.in1 or2.1.in1 input.0.btn-z
 #net hal-joystart halui.program.run halui.mode.auto <= input.0.btn-dead
 net hal-joypause halui.program.pause <= input.0.btn-tr2
 net hal-joyresume halui.program.resume <= input.0.btn-a
-net axis-man-mode axisui.set-manual-mode <= input.0.btn-tl2
+#net axis-man-mode axisui.set-manual-mode <= input.0.btn-tl2
 
-# net remote-rapid-to-home halui.mdi-command-00 <= input.0.btn-b
-
-
+net mode-manual  halui.mode.manual <= input.0.btn-tl2
 
 net joy-speed-1 mux4.0.sel0 <= or2.0.out
 net joy-speed-2 mux4.0.sel1 <= or2.1.out
@@ -42,11 +40,33 @@ net joy-x-jog halui.jog.0.analog <= input.0.abs-z-position
 net joy-y-jog halui.jog.1.analog <= input.0.abs-rz-position 
 net joy-z-jog halui.jog.2.analog <= input.0.abs-y-position
 
- # set up the rapid to home button
-#net remote-rapid-to-home halui.mdi-command-00 <= pyvcp.rapid-to-home
-
-
-
 setp input.0.abs-rz-scale -127.5
 setp input.0.abs-y-scale -127.5
 # setp input.0.abs-hat0y-scale -1
+#####################################################################
+#	PROBE inits  
+#	http://7xcnc.com/software/probing/z-touch-plate/
+
+#limits debounce to stop false triggers
+#loadrt debounce cfg=2 #change  to the number you want
+#setp debounce.0.delay 100 #this sets the delay 100 iterations of the base thread
+#addf debounce.0 base-thread
+#net deb-probe-in debounce.0.0.in <= parport.0.pin-12-in-not
+#net probe-in debounce.0.0.out
+#net probe-in => motion.probe-input
+net probe-led parport.0.pin-12-in => pyvcp.probe-led
+
+net remote-rapid-to-home halui.mdi-command-00 <= pyvcp.rapid-to-home
+net touch-probe-z halui.mdi-command-01 <= pyvcp.touch-probe-z
+net touch-probe-raw-z halui.mdi-command-02 <= pyvcp.touch-probe-raw-z
+
+net touch-probe-x-l halui.mdi-command-03 <= pyvcp.touch-probe-x-l
+net touch-probe-x-r halui.mdi-command-04 <= pyvcp.touch-probe-x-r
+
+net touch-probe-y-t halui.mdi-command-05 <= pyvcp.touch-probe-y-t
+net touch-probe-y-b halui.mdi-command-06 <= pyvcp.touch-probe-y-b
+
+net touch-XY halui.mdi-command-07 <= pyvcp.touch-XY
+
+#net zero-z-to-probe halui.mdi-command-02 <= pyvcp.zero-z-to-probe
+

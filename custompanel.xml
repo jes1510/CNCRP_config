@@ -1,7 +1,77 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <pyvcp>
-<!-- 
-Include your PyVCP panel here.
-The contents of this file will not be overwritten when you run stepconf again.
--->
+
+<vbox>
+ <relief>RAISED</relief>
+ <bd>3</bd>
+ <hbox>
+     <led>
+		 <halpin>"probe-led"</halpin>
+		 <size>15</size>
+		 <on_color>"red"</on_color>
+		 <off_color>"green"</off_color>     
+	</led>
+	<label>
+     	<text>"Probe"</text>
+     	<font>("Fixed",12)</font>
+     </label> 
+ </hbox>
+
+
+<hbox>
+ <button>
+     <halpin>"touch-probe-z"</halpin>
+     <text>"Z Block"</text> 
+     <font>('Fixed',12)</font>
+ </button> 
+
+ <button>
+     <halpin>"touch-probe-raw-z"</halpin>
+     <text>"Z Work"</text> 
+     <font>('Fixed',12)</font>
+ </button> 
+ </hbox>
+ 
+ <hbox>
+ <button>
+     <halpin>"touch-probe-x-l"</halpin>
+     <text>"X-L"</text> 
+     <font>('Fixed',12)</font>
+ </button> 
+
+ <button>
+     <halpin>"touch-probe-x-r"</halpin>
+     <text>"X-R"</text> 
+     <font>('Fixed',12)</font>
+ </button> 
+ </hbox>
+ 
+  <hbox>
+ <button>
+     <halpin>"touch-probe-y-t"</halpin>
+     <text>"Y-T"</text> 
+     <font>('Fixed',12)</font>
+ </button> 
+
+ <button>
+     <halpin>"touch-probe-y-b"</halpin>
+     <text>"Y-B"</text> 
+     <font>('Fixed',12)</font>
+ </button> 
+ </hbox>
+
+
+ <button>
+     <halpin>"touch-XY"</halpin>
+     <text>"Touchoff XY"</text> 
+     <font>('Fixed',12)</font>
+ </button> 
+</vbox>
+
+ <button>
+     <halpin>"rapid-to-home"</halpin>
+     <text>"Rapid to Home"</text> 
+     <font>('Fixed',12)</font>
+ </button>  
+
 </pyvcp>
