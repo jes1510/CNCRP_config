@@ -56,17 +56,24 @@ setp input.0.abs-y-scale -127.5
 #net probe-in => motion.probe-input
 net probe-led parport.0.pin-12-in => pyvcp.probe-led
 
+
+
 net remote-rapid-to-home halui.mdi-command-00 <= pyvcp.rapid-to-home
-net touch-probe-z halui.mdi-command-01 <= pyvcp.touch-probe-z
-net touch-probe-raw-z halui.mdi-command-02 <= pyvcp.touch-probe-raw-z
+net touch-probe-z-block halui.mdi-command-01 <= pyvcp.touch-probe-z-block
+net touch-probe-z-work halui.mdi-command-02 <= pyvcp.touch-probe-z-work
 
-net touch-probe-x-l halui.mdi-command-03 <= pyvcp.touch-probe-x-l
-net touch-probe-x-r halui.mdi-command-04 <= pyvcp.touch-probe-x-r
+net touch-probe-x-block halui.mdi-command-03 <= pyvcp.touch-probe-x-block
+net touch-probe-x-work halui.mdi-command-04 <= pyvcp.touch-probe-x-work
 
-net touch-probe-y-t halui.mdi-command-05 <= pyvcp.touch-probe-y-t
-net touch-probe-y-b halui.mdi-command-06 <= pyvcp.touch-probe-y-b
+net touch-probe-y-block halui.mdi-command-05 <= pyvcp.touch-probe-y-block
+net touch-probe-y-work halui.mdi-command-06 <= pyvcp.touch-probe-y-work
 
-net touch-XY halui.mdi-command-07 <= pyvcp.touch-XY
+net touch-probe-y-back-block halui.mdi-command-07 <= pyvcp.touch-probe-y-back-block
+net touch-probe-y-back halui.mdi-command-08 <= pyvcp.touch-probe-y-back
 
-#net zero-z-to-probe halui.mdi-command-02 <= pyvcp.zero-z-to-probe
+net touch-probe-x-right-block halui.mdi-command-09 <= pyvcp.touch-probe-x-right-block
+net touch-probe-x-right halui.mdi-command-10 <= pyvcp.touch-probe-x-right
+
+net touch-XYZ halui.mdi-command-11 <= pyvcp.touch-XYZ
+
 
