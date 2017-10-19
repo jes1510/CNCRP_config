@@ -1,0 +1,13 @@
+(Set Z probe to Block height)
+<pre>
+o100 sub
+( Set current Z position to 0 so that we will always be moving down )
+G10 L20 P0 Z0
+( Probe to Z-10 at F25 [Uses machine units, I work in mm, this is meant to be slow!] )
+G38.2 Z-1 f10
+( Set Z0 at point where probe triggers with offset of +1.47 [this is the thickness of my PCB plate. You must adjust this for your plate / setup] )
+G10 L20 P0 Z0.496
+( Rapid up to Z10 above the material )
+G0 Z.75
+o100 endsub
+</pre>

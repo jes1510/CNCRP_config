@@ -1,0 +1,19 @@
+(Probe Y axis into a block from the BACK and calculate offset)
+<pre>
+o106 sub
+( Set 0 on Y)
+G10 L20 P0 Y0
+( Probe Probe from bottom into block)
+G38.2 Y-1 f10
+
+(Set offset to be .125 + block depth)
+G10 L20 P0 Y+0.125
+( Rapid away)
+G0 Y+1.371
+o106 endsub
+</pre>
+
+
+
+
+

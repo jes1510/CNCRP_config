@@ -1,0 +1,13 @@
+(Probe Y axis from Bottom)
+<pre>
+o104 sub
+( Set 0 on Y)
+G10 L20 P0 Y0
+( Probe Probe from bottom to top)
+G38.2 Y+1 f10
+
+G10 L20 P0 Y-0.125
+( Rapid away)
+G0 Y-0.75
+o104 endsub
+</pre>

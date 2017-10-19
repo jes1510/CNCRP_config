@@ -1,0 +1,13 @@
+(Probe X Axis from Left)
+<pre>
+o103 sub
+
+G10 L20 P0 X0
+
+G38.2 X+1 f10
+
+G10 L20 P0 X-0.125
+( Rapid back to x-.75 away from the material )
+G0 X-.75
+o103 endsub
+</pre>
